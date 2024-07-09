@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出席率管理アプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>出席率管理アプリ</h1>
+        <form id="attendance-form">
+            <div class="input-group">
+                <label for="attended-days">出席しなければならない日数</label>
+                <input type="number" id="attended-days" min="0">
+            </div>
+            <div class="input-group">
+                <label for="absent-days">欠席日数</label>
+                <input type="text" id="absent-days" min="0">
+            </div>
+            <button type="button" onclick="calculateAttendance()">計算する</button>
+        </form>
+        <div id="result"></div>
+        <div id="alert"></div>
+        <hr>
+        <div class="calculator-container">
+            <label for="calculate">出席日数計算に活用してください</label>
+            <div class="calculator">
+                <div id="display" class="display">0</div>
+                <div class="buttons">
+                    <button class="num-btn">7</button>
+                    <button class="num-btn">8</button>
+                    <button class="num-btn">9</button>
+                    <button class="operator-btn">/</button>
+                    <button class="num-btn">4</button>
+                    <button class="num-btn">5</button>
+                    <button class="num-btn">6</button>
+                    <button class="operator-btn">*</button>
+                    <button class="num-btn">1</button>
+                    <button class="num-btn">2</button>
+                    <button class="num-btn">3</button>
+                    <button class="operator-btn">-</button>
+                    <button class="num-btn">0</button>
+                    <button class="num-btn">.</button>
+                    <button id="clear-btn">C</button>
+                    <button class="operator-btn">+</button>
+                    <button id="equals-btn">=</button>
+                </div>
+                <div class="month-buttons">
+                    <button class="month-btn" data-month="4月">4月</button>
+                    <button class="month-btn" data-month="5月">5月</button>
+                    <button class="month-btn" data-month="6月">6月</button>
+                    <button class="month-btn" data-month="7月">7月</button>
+                    <button class="month-btn" data-month="8月">8月</button>
+                    <button class="month-btn" data-month="9月">9月</button>
+                    <button class="month-btn" data-month="10月">10月</button>
+                    <button class="month-btn" data-month="11月">11月</button>
+                    <button class="month-btn" data-month="12月">12月</button>
+                    <button class="month-btn" data-month="1月">1月</button>
+                    <button class="month-btn" data-month="2月">2月</button>
+                    <button class="month-btn" data-month="3月">3月</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="calendar">
+            <h2>2024年の平日と祝日</h2>
+            <h3>更新:2024/07/09(火)</h3>
+            <p>※4月8日は入学式のため祝日扱いとする</p>
+            <p>※7月1、4、8、19、23日が授業なしのため祝日扱いとする</p>
+            <p>※夏季休暇は8月いっぱいと9月の1週間の予定</p>
+            <div id="calendar-content"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
